@@ -137,3 +137,55 @@ Smartphone
 
 Optional
  └─ Cloud / API    ──► Aggregated data for Lloyd dashboards & analytics
+
+
+
+
+# 📁 Repository Structure
+
+Below is the recommended structure of this repo.  
+It separates the mobile app, OBD integration, AI logic, assets, and documentation.
+
+```plaintext
+lloyd-reflect/
+│
+├── app/                          # Main mobile application (React Native / Flutter)
+│   ├── src/
+│   │   ├── components/           # Reusable UI components (RiskMeter, Alerts, CameraView…)
+│   │   ├── screens/              # Main screens (Home, Camera, OBD, Settings)
+│   │   ├── hooks/                # Custom hooks (useCamera, useSensors, useOBD)
+│   │   ├── sensors/              # Motion sensor handling (accelerometer, gyroscope)
+│   │   ├── ai/                   # Driver-state detection logic (rules for Phase 1, ML later)
+│   │   │   ├── detectionRules.js # Simple thresholds for distraction/fatigue
+│   │   │   ├── riskEngine.js     # Fusion logic for risk scoring
+│   │   │   └── model/            # Placeholder for future ML models
+│   │   ├── obd/                  # OBD-II integration
+│   │   │   ├── bluetooth.js
+│   │   │   └── parsers.js
+│   │   ├── utils/                # Helpers, constants, colors, scoring functions
+│   │   ├── assets/               # Images, icons, logos
+│   │   ├── styles/               # App-wide styling
+│   │   └── App.js                # App root
+│   │
+│   ├── package.json              # Dependencies
+│   ├── app.json                  # App config
+│   └── README.md                 # Technical documentation for the app
+│
+├── prototype/                    # Holder mockup, 3D files, physical prototype
+│   ├── designs/
+│   └── photos/
+│
+├── demo/                         # Hackathon demo files
+│   ├── video/                    # 1–2 minute video
+│   ├── screenshots/              # Demo screenshots
+│   └── script.md                 # Pitch script for video
+│
+├── docs/                         # Architecture diagrams, presentation slides, research notes
+│   ├── architecture.png
+│   ├── slides-phase1.pdf
+│   ├── RSE-impact.md
+│   └── concept.md
+│
+├── .gitignore
+├── LICENSE                       # Optional
+└── README.md                     # You are here
